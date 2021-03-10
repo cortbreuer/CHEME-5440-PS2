@@ -37,7 +37,6 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         problem_dictionary["inducer_dissociation_constant"] = toml_dictionary["inducer_dissociation_constant"]
         problem_dictionary["ideal_gas_constant_R"] = 0.008314 # kJ/mol-K
         problem_dictionary["temperature_K"] = (273.15+37)
-        problem_dictionary["initital_condition_array"] = initital_condition_array
         problem_dictionary["mRNA_degradation_constant"] = mRNA_degradation_constant
         problem_dictionary["maximum_transcription_velocity"] = VMAX
         problem_dictionary["characteristic_transcript_length"] = toml_dictionary["characteristic_transcript_length"]
