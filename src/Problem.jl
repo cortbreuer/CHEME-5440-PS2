@@ -46,6 +46,7 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         problem_dictionary["RNAPII_concentration"] = toml_dictionary["RNAPII_concentration"]
         problem_dictionary["transcription_elongation_rate"] = toml_dictionary["transcription_elongation_rate"]
         problem_dictionary["gene_length_in_nt"] = toml_dictionary["gene_length_in_nt"]
+        problem_dictionary["initial_condition_array"] = initial_condition_array
 
         # return -
         return problem_dictionary
