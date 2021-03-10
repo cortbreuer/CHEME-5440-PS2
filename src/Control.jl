@@ -17,7 +17,10 @@ function calculate_transcriptional_control_array(t::Float64,x::Array{Float64,1},
     n = problem["inducer_cooperativity_parameter"]
 
     # TODO: write u-varible function here 
-    # u_variable = ...
+    f_I = (I^n)/(I^n + KD^n)
+    W1 = exp(-E1/R*T_K)
+    W2 = exp(-E2/R*T_K)
+    u_variable = (W1 + (f * W2))/(1 + W1 + (f * W2))
 
     # return -
     return u_variable

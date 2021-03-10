@@ -54,6 +54,6 @@ inducer_array = 10 .^(range(-3,stop=3, length=100))
 mRNA_steady_state_array = main(path_to_parameters_file, inducer_array)
 
 # to plot - uncomment me -
-# plot(mRNA_steady_state_array[:,1],mRNA_steady_state_array[:,2], xscale=:log10, legend=false)
-# xlabel!("Inducer concentration (nM)")
-# ylabel!("Steady state mRNA concentration (nM)")
+plot(mRNA_steady_state_array[:,1],mRNA_steady_state_array[:,2], xscale=:log10, legend=false)
+xlabel!("Inducer concentration (nM)")
+ylabel!("Steady state mRNA concentration (nM)")
