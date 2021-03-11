@@ -11,7 +11,7 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         # setup the initial condition array -
         initial_condition_array = [
             0.0 ;   # 1 mRNA
-            .005 ;   # TODO: gene concentration goes here - uM
+            5.0 ;   # TODO: gene concentration goes here - nM
             0.0 ;   # 3 I = we'll fill this in the execute script 
         ]
 
