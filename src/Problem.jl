@@ -20,7 +20,7 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         mRNA_degradation_constant = log(2)/mRNA_half_life_in_min
 
         # TODO: VMAX for transcription -
-        transcription_elongation_rate = toml_dictionary["transcription_elongation_rate"]/60
+        transcription_elongation_rate = toml_dictionary["transcription_elongation_rate"]
         characteristic_transcript_length = toml_dictionary["characteristic_transcript_length"]
         RNAPII_concentration = toml_dictionary["RNAPII_concentration"]*1000
         gene_length_in_nt = toml_dictionary["gene_length_in_nt"]
@@ -41,7 +41,7 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         problem_dictionary["maximum_transcription_velocity"] = VMAX
         problem_dictionary["characteristic_transcript_length"] = toml_dictionary["characteristic_transcript_length"]
         problem_dictionary["inducer_cooperativity_parameter"] = toml_dictionary["inducer_cooperativity_parameter"]
-        problem_dictionary["mRNA_half_life_in_min"] = toml_dictionary["mRNA_half_life_in_min"]
+        problem_dictionary["mRNA_half_life_in_min"] = toml_dictionary["mRNA_half_life_in_min"]*60
         problem_dictionary["RNAPII_concentration"] = toml_dictionary["RNAPII_concentration"]*1000
         problem_dictionary["transcription_elongation_rate"] = toml_dictionary["transcription_elongation_rate"]/60
         problem_dictionary["gene_length_in_nt"] = toml_dictionary["gene_length_in_nt"]
