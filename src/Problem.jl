@@ -11,9 +11,10 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         # setup the initial condition array -
         initial_condition_array = [
             0.0 ;   # 1 mRNA
-            5.0 ;   # TODO: gene concentration goes here - nM
+            0.005 ;   # TODO: gene concentration goes here -
             0.0 ;   # 3 I = we'll fill this in the execute script 
         ]
+
 
         # TODO: calculate the mRNA_degradation_constant 
         mRNA_half_life_in_min = toml_dictionary["mRNA_half_life_in_min"]*60
@@ -26,6 +27,7 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         VMAX = (transcription_elongation_rate/gene_length_in_nt)*RNAPII_concentration
 
         # TODO: Stuff that I'm forgetting?
+        # ...
 
         # --- PUT STUFF INTO problem_dictionary ---- 
         problem_dictionary["transcription_time_constant"] = toml_dictionary["transcription_time_constant"]
@@ -42,9 +44,10 @@ function generate_problem_dictionary(path_to_parameters_file::String)::Dict{Stri
         problem_dictionary["mRNA_degradation_constant"] = mRNA_degradation_constant
         problem_dictionary["inducer_cooperativity_parameter"] = toml_dictionary["inducer_cooperativity_parameter"]
         problem_dictionary["gene_length_in_nt"] = toml_dictionary["gene_length_in_nt"]
-        problem_dictionary["transcription_elongation_rate"] = toml_dictionary["transcription_elongation_rate"]/60
+        problem_dictionary["transcription_elongation_rate"] = toml_dictionary["transcription_elongation_rate"]
         problem_dictionary["RNAPII_concentration"] = toml_dictionary["RNAPII_concentration"]*1000
 
+        
         # return -
         return problem_dictionary
     catch error
